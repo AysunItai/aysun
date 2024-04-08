@@ -1,0 +1,102 @@
+
+David, 14:42
+We will also need to make new monsters in the game that have stats attached to them, 
+like in the monsters.is file I gave you. We can copy the code for existing monsters 
+and add a new name and sprite sheet for their animation, then get them stats.
+
+Then we need to set a close combat range where the player is able to attack 
+a monster within that range. If within range, the player can click a monster to 
+attack and deal damage to its health based on the damage stat of the weapon, 
+Plus additional damage for strength. Let’s say each five strength equals one more damage. 
+And the starting weapon does 10 to 20 damage.
+
+
+While React can be used for simple games, handling complex animations, numerous entities, 
+and real-time interactions often calls for a more dedicated game development framework or library, 
+such as Phaser.js for web games. React's re-rendering can introduce performance bottlenecks 
+for more intensive games, and managing game state can become cumbersome as complexity grows.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+Hi Aysun. I meant to still use ciabattas revenge as a base and add to it. 
+It has a levels file where you can add in game objects like enemies and walls. 
+
+import {
+  LEVEL_THEMES,
+  PLACEMENT_TYPE_FLOUR,
+  PLACEMENT_TYPE_GOAL,
+  PLACEMENT_TYPE_HERO,
+  PLACEMENT_TYPE_WALL,
+  // PLACEMENT_TYPE_LOCK,
+  // PLACEMENT_TYPE_KEY,
+  PLACEMENT_TYPE_ICE,
+  PLACEMENT_TYPE_WATER,
+  PLACEMENT_TYPE_FIRE,
+  PLACEMENT_TYPE_CONVEYOR,
+  PLACEMENT_TYPE_WATER_PICKUP,
+  PLACEMENT_TYPE_ICE_PICKUP,
+  // PLACEMENT_TYPE_ROAMING_ENEMY,
+  // PLACEMENT_TYPE_GROUND_ENEMY,
+  // PLACEMENT_TYPE_FLYING_ENEMY,
+  PLACEMENT_TYPE_FIRE_PICKUP,
+  PLACEMENT_TYPE_SWITCH_DOOR,
+  PLACEMENT_TYPE_SWITCH,
+  PLACEMENT_TYPE_TELEPORT,
+  //PLACEMENT_TYPE_THIEF,
+  //PLACEMENT_TYPE_CIABATTA,
+} from "../helpers/consts";
+
+const level = {
+  theme: LEVEL_THEMES.GREEN,
+  tilesWidth: 50,
+  tilesHeight: 50,
+  placements: [
+    { x: 5, y: 5, type: PLACEMENT_TYPE_HERO },
+    { x: 7, y: 4, type: PLACEMENT_TYPE_GOAL },
+
+    //{ x: 3, y: 1, type: PLACEMENT_TYPE_CIABATTA },
+    { x: 5, y: 1, type: PLACEMENT_TYPE_FIRE },
+
+    { x: 3, y: 2, type: PLACEMENT_TYPE_TELEPORT },
+    { x: 7, y: 6, type: PLACEMENT_TYPE_TELEPORT },
+
+    { x: 7, y: 3, type: PLACEMENT_TYPE_SWITCH_DOOR, isRaised: false },
+    { x: 4, y: 3, type: PLACEMENT_TYPE_SWITCH_DOOR, isRaised: true },
+    { x: 4, y: 2, type: PLACEMENT_TYPE_SWITCH },
+
+    { x: 8, y: 2, type: PLACEMENT_TYPE_WALL },
+    { x: 8, y: 3, type: PLACEMENT_TYPE_FLOUR },
+
+    { x: 1, y: 4, type: PLACEMENT_TYPE_CONVEYOR, direction: "DOWN" },
+    { x: 1, y: 5, type: PLACEMENT_TYPE_CONVEYOR, direction: "DOWN" },
+
+    { x: 3, y: 4, type: PLACEMENT_TYPE_FIRE },
+    { x: 4, y: 4, type: PLACEMENT_TYPE_FIRE_PICKUP },
+    { x: 5, y: 4, type: PLACEMENT_TYPE_FIRE },
+
+    { x: 4, y: 7, type: PLACEMENT_TYPE_ICE_PICKUP },
+    { x: 3, y: 6, type: PLACEMENT_TYPE_ICE, corner: "TOP_LEFT" },
+    { x: 3, y: 7, type: PLACEMENT_TYPE_ICE },
+    { x: 3, y: 8, type: PLACEMENT_TYPE_ICE, corner: "BOTTOM_LEFT" },
+    { x: 5, y: 6, type: PLACEMENT_TYPE_ICE, corner: "TOP_RIGHT" },
+    { x: 5, y: 7, type: PLACEMENT_TYPE_ICE },
+    { x: 5, y: 8, type: PLACEMENT_TYPE_ICE, corner: "BOTTOM_RIGHT" },
+
+    { x: 6, y: 8, type: PLACEMENT_TYPE_WATER_PICKUP },
+    { x: 7, y: 8, type: PLACEMENT_TYPE_WATER },
+  ],
+};
+
+export default level;
+
+I was thinking for now just to edit the demolevel1 and add in the enemies,    // PLACEMENT_TYPE_ROAMING_ENEMY,
+  // PLACEMENT_TYPE_GROUND_ENEMY,
+  // PLACEMENT_TYPE_FLYING_ENEMY,
+
+Then edit the spritesheet provided in the game to add in additional sprites, 
+but for now still use the ones provided
+
+Other things to work on:
+Add a tree placement using provided sprite so it can be easily added to the map
+Enemies drop a random amount of gold (different amounts for each monster, e.g 1-5 for bat, 2-10 for goblin)
+Player can click on a defeated enemy to open their loot and take it

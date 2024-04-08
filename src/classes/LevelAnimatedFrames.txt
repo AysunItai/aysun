@@ -1,0 +1,8 @@
+Constructor: Initializes two PlacementTypeAnimationFrames instances, one for water and one for fire, using the predefined sequences and animation speeds. This setup allows for the independent animation of water and fire elements within a level.
+tick() Method: A method designed to be called periodically (likely every game update or frame tick) to advance the animation frames for both water and fire. It calls the tick method on both waterFrames and fireFrames instances, which likely updates the current frame based on the animation speed and the passage of time.
+Getters for Current Frames: waterFrame and fireFrame getters return the current active frame for the water and fire animations, respectively. These are likely used by the game's rendering system to draw the appropriate tile based on the current state of the animation.
+Functionality and Use
+The LevelAnimatedFrames class serves as an animation controller for level elements, making it easier to incorporate dynamic visual effects like flowing water or burning fire into game scenes.
+By encapsulating the animation logic within dedicated instances for different tile types, it provides a clean and modular approach to handling in-game animations, allowing for easy extension or modification.
+The use of tick methods for progressing animations aligns with common game development practices, where the game's state is updated in discrete steps (ticks) to create smooth and continuous motion on screen.
+In summary, LevelAnimatedFrames is a utility class for managing animations within a game level, specifically tailored for animating water and fire elements through a sequence of predefined tiles, with support for adjustable animation speeds.

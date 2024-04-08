@@ -1,0 +1,10 @@
+.goblin {
+    position: relative;
+    pointer-events: none;
+}
+
+.goblinBody {
+    position: absolute;
+    left: -8px;
+    top: -19px;
+}

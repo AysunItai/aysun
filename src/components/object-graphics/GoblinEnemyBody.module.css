@@ -1,0 +1,21 @@
+/* GoblinEnemyBody.module.css */
+
+.goblin {
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.healthBar {
+  position: absolute;
+  top: -10px; /* Adjust as needed */
+  left: 0;
+  height: 5px;
+  background-color: red;
+}
+
+.goblinBody {
+  position: absolute;
+  left: -8px;
+  top: -19px;
+}

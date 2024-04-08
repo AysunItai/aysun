@@ -1,0 +1,28 @@
+/* In BatEnemyBody.module.css */
+
+/* Existing styles */
+@keyframes goldDrop {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+        /* Adjust based on your preference */
+    }
+}
+
+.goldDrop {
+    animation: goldDrop 1s forwards;
+    position: absolute;
+    bottom: -10px;
+    /* Position where the gold icon starts dropping from */
+    /* Add your styling for the gold icon here */
+}
+
+/* Updated style for HP number */
+.hpNumber {
+    font-size: 10px; /* Adjust the font size as needed */
+}

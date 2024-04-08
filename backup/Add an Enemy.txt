@@ -1,0 +1,8 @@
+enemy flow:
+1-create placement inside of game objects
+2-it is going to be a roming enemy inheret from roaming enemy class
+3-create placement type at constants/helpers
+4-create in object graphics a body component with sprite spritesheet
+5-add the tiles the coordinates of the enemy from spritesheet
+6-GO TO PLACEMENT FACTORY AND INITILIZE THE class
+7-GO TO DEMO LEVEL. Import the monster. AND ADD THE NEW CHARACTER TO A POSITION

@@ -1,0 +1,132 @@
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    display: flex;
+    padding:10rem;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    /* Red color for the close button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.closeButton:hover {
+    background-color: #d32f2f;
+}
+
+.inventoryWrapper {
+    padding:20rem;
+    width:100%;
+    height:100vh;
+    display: flex;
+    gap: 6rem;
+    padding: 20px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: stretch;
+    color:#fff;
+       
+}
+.equipmentSection {
+    flex:1;
+    min-height: 20rem;
+    
+    }
+.equipmentGrid{
+    display: grid;
+    grid-template-columns: repeat(5, 3rem);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color:#fff;
+    overflow-y: auto;
+    justify-content: center;
+}
+.equipmentTitle {
+    margin-bottom: 10px;
+   
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img{
+    width:3rem;
+}
+.commonWeaponSlot {
+   display:flex;
+   gap:1rem;
+   margin-top: 2rem;
+}
+
+.commonWeaponSlot img {
+    width: 4rem;
+    
+    
+}
+.generalDropAreaWrapper{
+    flex:1;
+    
+}
+.generalDropArea{
+   
+    display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: #1f1f1f;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        color: #fff;
+        min-height: 10rem;
+        overflow-y: auto;
+
+}
+.characterSlot {
+    
+
+    
+}
+.characterAndWeaponWrapper {
+    flex:1;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+}
+.equippedSlot {
+    width:3rem;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.equippedSlot img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    
+}

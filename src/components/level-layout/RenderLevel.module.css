@@ -1,0 +1,68 @@
+.inventoryButton {
+    padding: 5px 10px;
+    color: white;
+    font-size: 10px;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+.inventoryButton:hover {
+    color:#A4ED71;
+    background-color: transparent;
+   
+}
+
+.inventoryButton:active {
+    transform: scale(0.98);
+    /* Slightly shrink the button when clicked */
+}
+.characterStatusButton {
+    padding: 5px 10px;
+        color: white;
+        font-size: 10px;
+    
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        outline: none;
+        margin-left: 20px;
+        background-color: transparent;
+    
+}
+
+.characterStatusButton:hover {
+    color: #A4ED71;
+        background-color: transparent;
+}
+/* Optionally, add some responsiveness for smaller screens */
+@media (max-width: 600px) {
+    .inventoryButton {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+.fullScreenContainer {
+    align-items: center;
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    position: absolute;
+}
+
+.gameScreen {
+    width: var(--game-viewport-width);
+    height: var(--game-viewport-height);
+    transform: scale(var(--pixel-size));
+
+    /*outline: 2px solid red;*/
+}

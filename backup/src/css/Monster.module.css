@@ -1,0 +1,25 @@
+/* Monster.module.css */
+
+.monster {
+    cursor: pointer;
+    text-align: center;
+}
+
+.batSprite {
+    width: 32px;
+    /* Width of the bat sprite */
+    height: 32px;
+    /* Height of the bat sprite */
+    background-image: url('../img/sprites/32bats.png');
+    background-repeat: no-repeat;
+    /* Adjust the background-position if your bat is not the first sprite */
+    background-position: 0 0;
+    /* Position of the bat sprite in the sprite sheet */
+    margin: 0 auto;
+    /* Center the sprite */
+}
+
+/* Example of specifying different bats if your sprite sheet contains multiple bats */
+/* .bat1 { background-position: 0 0; } */
+/* .bat2 { background-position: -32px 0; } */
+/* Add more as needed */

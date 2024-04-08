@@ -1,0 +1,165 @@
+
+David, 14:42
+We will also need to make new monsters in the game that have stats attached to them, 
+like in the monsters.is file I gave you. We can copy the code for existing monsters 
+and add a new name and sprite sheet for their animation, then get them stats.
+
+Then we need to set a close combat range where the player is able to attack 
+a monster within that range. If within range, the player can click a monster to 
+attack and deal damage to its health based on the damage stat of the weapon, 
+Plus additional damage for strength. Let’s say each five strength equals one more damage. 
+And the starting weapon does 10 to 20 damage.
+
+
+While React can be used for simple games, handling complex animations, numerous entities, 
+and real-time interactions often calls for a more dedicated game development framework or library, 
+such as Phaser.js for web games. React's re-rendering can introduce performance bottlenecks 
+for more intensive games, and managing game state can become cumbersome as complexity grows.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+Hi Aysun. I meant to still use ciabattas revenge as a base and add to it. 
+It has a levels file where you can add in game objects like enemies and walls. 
+
+import {
+  LEVEL_THEMES,
+  PLACEMENT_TYPE_FLOUR,
+  PLACEMENT_TYPE_GOAL,
+  PLACEMENT_TYPE_HERO,
+  PLACEMENT_TYPE_WALL,
+  // PLACEMENT_TYPE_LOCK,
+  // PLACEMENT_TYPE_KEY,
+  PLACEMENT_TYPE_ICE,
+  PLACEMENT_TYPE_WATER,
+  PLACEMENT_TYPE_FIRE,
+  PLACEMENT_TYPE_CONVEYOR,
+  PLACEMENT_TYPE_WATER_PICKUP,
+  PLACEMENT_TYPE_ICE_PICKUP,
+  // PLACEMENT_TYPE_ROAMING_ENEMY,
+  // PLACEMENT_TYPE_GROUND_ENEMY,
+  // PLACEMENT_TYPE_FLYING_ENEMY,
+  PLACEMENT_TYPE_FIRE_PICKUP,
+  PLACEMENT_TYPE_SWITCH_DOOR,
+  PLACEMENT_TYPE_SWITCH,
+  PLACEMENT_TYPE_TELEPORT,
+  //PLACEMENT_TYPE_THIEF,
+  //PLACEMENT_TYPE_CIABATTA,
+} from "../helpers/consts";
+
+const level = {
+  theme: LEVEL_THEMES.GREEN,
+  tilesWidth: 50,
+  tilesHeight: 50,
+  placements: [
+    { x: 5, y: 5, type: PLACEMENT_TYPE_HERO },
+    { x: 7, y: 4, type: PLACEMENT_TYPE_GOAL },
+
+    //{ x: 3, y: 1, type: PLACEMENT_TYPE_CIABATTA },
+    { x: 5, y: 1, type: PLACEMENT_TYPE_FIRE },
+
+    { x: 3, y: 2, type: PLACEMENT_TYPE_TELEPORT },
+    { x: 7, y: 6, type: PLACEMENT_TYPE_TELEPORT },
+
+    { x: 7, y: 3, type: PLACEMENT_TYPE_SWITCH_DOOR, isRaised: false },
+    { x: 4, y: 3, type: PLACEMENT_TYPE_SWITCH_DOOR, isRaised: true },
+    { x: 4, y: 2, type: PLACEMENT_TYPE_SWITCH },
+
+    { x: 8, y: 2, type: PLACEMENT_TYPE_WALL },
+    { x: 8, y: 3, type: PLACEMENT_TYPE_FLOUR },
+
+    { x: 1, y: 4, type: PLACEMENT_TYPE_CONVEYOR, direction: "DOWN" },
+    { x: 1, y: 5, type: PLACEMENT_TYPE_CONVEYOR, direction: "DOWN" },
+
+    { x: 3, y: 4, type: PLACEMENT_TYPE_FIRE },
+    { x: 4, y: 4, type: PLACEMENT_TYPE_FIRE_PICKUP },
+    { x: 5, y: 4, type: PLACEMENT_TYPE_FIRE },
+
+    { x: 4, y: 7, type: PLACEMENT_TYPE_ICE_PICKUP },
+    { x: 3, y: 6, type: PLACEMENT_TYPE_ICE, corner: "TOP_LEFT" },
+    { x: 3, y: 7, type: PLACEMENT_TYPE_ICE },
+    { x: 3, y: 8, type: PLACEMENT_TYPE_ICE, corner: "BOTTOM_LEFT" },
+    { x: 5, y: 6, type: PLACEMENT_TYPE_ICE, corner: "TOP_RIGHT" },
+    { x: 5, y: 7, type: PLACEMENT_TYPE_ICE },
+    { x: 5, y: 8, type: PLACEMENT_TYPE_ICE, corner: "BOTTOM_RIGHT" },
+
+    { x: 6, y: 8, type: PLACEMENT_TYPE_WATER_PICKUP },
+    { x: 7, y: 8, type: PLACEMENT_TYPE_WATER },
+  ],
+};
+
+export default level;
+
+I was thinking for now just to edit the demolevel1 and add in the enemies,    // PLACEMENT_TYPE_ROAMING_ENEMY,
+  // PLACEMENT_TYPE_GROUND_ENEMY,
+  // PLACEMENT_TYPE_FLYING_ENEMY,
+
+Then edit the spritesheet provided in the game to add in additional sprites, 
+but for now still use the ones provided
+
+Other things to work on:
+Add a tree placement using provided sprite so it can be easily added to the map
+Enemies drop a random amount of gold (different amounts for each monster, 
+e.g 1-5 for bat, 2-10 for goblin)
+Player can click on a defeated enemy to open their loot and take it
+
+Here are more things to work on in the game: A wandering merchant character. 
+Roams the map until the player approaches and then stops and faces the character. 
+The player can click the merchant to open a dialogue box and click on dialogue options.
+ 1 option is to trade. It opens a trade window and the player can sell things in their 
+ inventory or buy things from the merchant's inventory.
+
+Berry bushes placement. The player can click the bush to harvest berries and they go to the inventory. 
+The bush is updated and has no berries.
+
+Add a time system to the game. The enviroment changes based on time of day (day/night cycle).
+
+Add tinderbox item to each character's inventory when starting the game. The tinderbox can be 
+used to start a camp. The player recovers health while camping, but needs food (5 food units to be 
+able to camp).
+Find tall grass sprite and add grass placement to game.
+
+Find rock sprite and add rock placement to game.
+
+Find sapling sprite  and add sapling placement to game.
+
+Make 'craft' button. Opens a menu showing craftable items and the supplies needed to craft them. 
+- Axe: 2 Sapling, 1 rock 1 grass. These items are consumed and the axe item is given to player in inventory.
+
+enemy flow:
+1-create placement inside of game objects
+2-it is going to be a roming enemy inheret from roaming enemy class
+3-create placement type at constants/helpers
+4-create in object graphics a body component with sprite spritesheet
+5-add the tiles the coordinates of the enemy from spritesheet
+6-GO TO PLACEMENT FACTORY AND INITILIZE THE class
+7-GO TO DEMO LEVEL AND ADD THE NEW CHARACTER TO A POSITION
+
+
+problem:black distance between the tiles;
+solution:in consts.js y direction of the tile is increased at [LEVEL_THEMES.GREEN]:
+
+problem:increase the walkable area 
+solution:increase the  tilesWidth
+
+
+PROBLEM:CHANGE The background color according to time of the day 
+solution:add a get current time function to current cllock class IN LEVEL STATE 
+in start function make your manipulations;
+Create a new Date object: The Date object in JavaScript is part of the standard built-in objects that provide functionality for working with dates and times. When you create a new instance of a Date object without passing any arguments (const now = new Date();), 
+it automatically contains the current date and time according to the system's clock where the code is running.
+
+Get the current hour: The getHours() method is called on the Date object instance (now.getHours();). 
+This method returns the hour for the specified date, according to local time. The hour is returned as an integer between 0 and 23. For example, 0 represents midnight (00:00 hours), 
+and 23 represents 11 PM (23:00 hours).
+const now = new Date();
+// At the moment of execution, if it's March 15th, 2023, 2:45 PM, `now` 
+represents this exact date and time.
+const currentHour = now.getHours();
+// Since it's 2:45 PM, `getHours()` returns `14`, 
+because 2:45 PM is in the 14th hour of the day in 24-hour time format.
+
+
+
+problem:how to add something on click to inventory?
+every placement has acces to a copy of inventory so we pass inventory object andit is a map 
+so we just add the item on button click.
