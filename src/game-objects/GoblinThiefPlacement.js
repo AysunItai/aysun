@@ -38,7 +38,7 @@ export class GoblinThiefPlacement extends RoamingEnemyPlacement {
     }
 
     updateAnimationFrames() {
-        console.log(this.spriteFacingDirection);
+        
 
         if (this.spriteFacingDirection === DIRECTION_RIGHT) {
             this.currentFrameRight = (this.currentFrameRight % 3) + 1;
