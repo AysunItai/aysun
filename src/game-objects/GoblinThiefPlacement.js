@@ -30,7 +30,7 @@ export class GoblinThiefPlacement extends RoamingEnemyPlacement {
 
   onClick() {
     // Inflict damage on click
-    const damage = 5;
+    const damage = this.level.heroRef.strength;
     this.takesDamage(damage);
     console.log(`Goblin ${this.id} took damage of ${damage}, remaining HP: ${this.hp}`);
   }

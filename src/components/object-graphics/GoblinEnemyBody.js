@@ -1,30 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Sprite from "./Sprite";
-import { TILES } from "../../helpers/tiles";
-import styles from "./GoblinEnemyBody.module.css";
+import styles from "./BatEnemyBody.module.css";  
 
-export default function GoblinEnemyBody({ frameCoord, yTranslate, onAttack, showShadow, hp }) {
-  const handleClick = (event) => {
-    event.stopPropagation();
-    if (onAttack) {
-      onAttack(); // Call the onAttack function provided as prop
-    }
-  };
+export default function GoblinEnemyBody({ frameCoord, yTranslate, hp, onClick }) {
+    const [showGoldDrop, setShowGoldDrop] = useState(false);
 
-  const healthPercentage = (hp / 20) * 100; // Assuming max HP is 20
+    const handleClick = (event) => {
+        event.stopPropagation(); 
+        onClick(); 
+        setShowGoldDrop(true);
+        setTimeout(() => setShowGoldDrop(false), 1000);  
+    };
 
-  return (
-    <div className={styles.goblin} onClick={handleClick}>
-      <div className={styles.healthBar} style={{ width: `${healthPercentage}%` }}></div>
-      <div>{showShadow && <Sprite frameCoord={TILES.SHADOW} />}</div>
-      <div
-        className={styles.goblinBody}
-        style={{
-          transform: `translateY(${yTranslate}px)`,
-        }}
-      >
-        <Sprite frameCoord={frameCoord} size={32} />
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.batEnemy} onClick={handleClick}>
+            <div
+                className={styles.batEnemyBody}
+                style={{
+                    transform: `translateY(${yTranslate}px)`, 
+                }}
+            >
+                <p className={styles.hpNumber}>{hp}</p>  
+                <Sprite frameCoord={frameCoord} size={36} />
+                {showGoldDrop && <div className={styles.goldDrop}>💰</div>}  
+            </div>
+        </div>
+    );
 }
