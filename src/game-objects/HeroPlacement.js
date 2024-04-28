@@ -28,6 +28,7 @@ export class HeroPlacement extends BodyPlacement {
     this.canCollectItems = true;
     this.canCompleteLevel = true;
     this.interactsWithGround = true;
+    this.meeting=false;
     
   }
   updateCharacterProperties(characterState) {
@@ -37,6 +38,11 @@ export class HeroPlacement extends BodyPlacement {
 
   controllerMoveRequested(direction) {
     //Attempt to start moving
+    if(this.checkForOverlapWithStalker() || this.meeting){
+    this.level.placements[5].tickBetweenMovesInterval =10000000;
+    this.level.placements[5].y = this.y + 1;
+    this.level.placements[5].x = this.x + 1;
+    }
     if (this.movingPixelsRemaining > 0) {
       return;
     }
@@ -66,6 +72,16 @@ export class HeroPlacement extends BodyPlacement {
     this.movingPixelDirection = direction;
     this.updateFacingDirection();
     this.updateWalkFrame();
+  }
+  checkForOverlapWithStalker() {
+    const [myX, myY] = this.displayXY();
+    const [stalkerX, stalkerY] = this.level.placements[5].displayXY();
+    const xDiff = Math.abs(myX - stalkerX);
+    const yDiff = Math.abs(myY - stalkerY);
+    if( xDiff <= 2 && yDiff <= 2){
+      this.meeting=true;
+      return true;
+    }
   }
 
   onAutoMovement(direction) {

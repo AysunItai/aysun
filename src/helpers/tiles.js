@@ -168,5 +168,8 @@ export const TILES = {
   GOBLIN_MOVE_DOWN_2: "2x25",
   GOBLIN_MOVE_DOWN_3: "4x25",
   GOBLIN_ENEMY_DEAD:"0x27",
+
+  //STALKER
+  STALKER_ENEMY: "45x4",
   
 };

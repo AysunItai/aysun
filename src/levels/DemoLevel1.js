@@ -26,6 +26,7 @@ import {
   PLACEMENT_TYPE_BAT_ENEMY,
   PLACEMENT_TYPE_GOBLIN,
   PLACEMENT_TYPE_GOBLIN_THIEF,
+  PLACEMENT_TYPE_STALKER_ENEMY,
   PLACEMENT_TYPE_BERRY
 } from "../helpers/consts";
 
@@ -50,7 +51,8 @@ const level = {
    // { x: 1, y: 3, type: PLACEMENT_TYPE_TREE },
     // { x: 1, y: 2, type: PLACEMENT_TYPE_TREE },
      { x: 0.7, y: 1.7, type: PLACEMENT_TYPE_BERRY },
-     { x: 9, y: 9, type: PLACEMENT_TYPE_GOBLIN_THIEF },
+     //{ x: 9, y: 9, type: PLACEMENT_TYPE_GOBLIN_THIEF },
+    { x: 1, y: 2, type: PLACEMENT_TYPE_STALKER_ENEMY },
 
 
     { x: 3, y: 2, type: PLACEMENT_TYPE_TELEPORT },

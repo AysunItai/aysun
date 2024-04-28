@@ -25,6 +25,7 @@ import {
   PLACEMENT_TYPE_BAT_ENEMY,
   PLACEMENT_TYPE_GOBLIN,
   PLACEMENT_TYPE_GOBLIN_THIEF,
+  PLACEMENT_TYPE_STALKER_ENEMY,
   PLACEMENT_TYPE_BERRY
 } from "../helpers/consts";
 import { HeroPlacement } from "../game-objects/HeroPlacement";
@@ -48,6 +49,7 @@ import { SwitchableDoorPlacement } from "../game-objects/SwitchableDoorPlacement
 import { DoorSwitchPlacement } from "../game-objects/DoorSwitchPlacement";
 import { TeleportPlacement } from "../game-objects/TeleportPlacement";
 import { ThiefPlacement } from "../game-objects/ThiefPlacement";
+import { StalkerEnemyPlacement } from "../game-objects/StalkerEnemyPlacement";
 import { CiabattaPlacement } from "../game-objects/CiabattaPlacement";
 //import  {BatPlacement} from "../game-objects/BatPlacement";
 import { BatEnemyPlacement } from "../game-objects/BatEnemyPlacement";
@@ -79,6 +81,7 @@ const placementTypeClassMap = {
   [PLACEMENT_TYPE_SWITCH]: DoorSwitchPlacement,
   [PLACEMENT_TYPE_TELEPORT]: TeleportPlacement,
   [PLACEMENT_TYPE_THIEF]: ThiefPlacement,
+  [PLACEMENT_TYPE_STALKER_ENEMY]: StalkerEnemyPlacement,
   [PLACEMENT_TYPE_CIABATTA]: CiabattaPlacement,
   //[PLACEMENT_TYPE_BAT]: BatPlacement,
   [PLACEMENT_TYPE_BAT_ENEMY]: BatEnemyPlacement,
