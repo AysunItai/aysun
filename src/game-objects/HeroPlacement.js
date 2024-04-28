@@ -38,6 +38,7 @@ export class HeroPlacement extends BodyPlacement {
 
   controllerMoveRequested(direction) {
     //Attempt to start moving
+    //this.level.placements[5] reference of stalking enemy
     if(this.checkForOverlapWithStalker() || this.meeting){
     this.level.placements[5].tickBetweenMovesInterval =10000000;
     this.level.placements[5].y = this.y + 1;

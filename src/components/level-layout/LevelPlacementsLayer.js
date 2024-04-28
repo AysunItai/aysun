@@ -8,7 +8,7 @@ export default function LevelPlacementsLayer({ level }) {
     if (level.placements.length > 0 ) {
       level.placements[0].updateCharacterProperties(characterState);
     }
-   console.log(level.placements)
+   
   }, [characterState, level.placements]);
 
   
