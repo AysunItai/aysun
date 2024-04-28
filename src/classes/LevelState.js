@@ -34,7 +34,6 @@ export class LevelState {
 
     // Create a fresh inventory
     this.inventory = new Inventory();
-    console.log(this.inventory)
 
     // Create a frame animation manager
     this.animatedFrames = new LevelAnimatedFrames();
@@ -54,17 +53,14 @@ export class LevelState {
     if (hour >= 0 && hour < 6) {
       newTheme = LEVEL_THEMES.BLUE; 
     } else if (hour >= 6 && hour < 12) {
-      newTheme = LEVEL_THEMES.GREEN; 
+      newTheme = LEVEL_THEMES.GRAY; 
     } else if (hour >= 12 && hour < 18) {
       newTheme = LEVEL_THEMES.GREEN; 
     } else if (hour >= 18 && hour <= 23) {
       newTheme = LEVEL_THEMES.PINK; 
     }
 
-    if (this.theme !== newTheme) {
-      this.theme = newTheme;
-      
-    }
+    this.theme = newTheme;
 
     this.startGameLoop();
   }
