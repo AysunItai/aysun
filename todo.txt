@@ -2,7 +2,7 @@ Make 'craft' button. Opens a menu showing craftable items and the supplies neede
 - Axe: 2 Sapling, 1 rock. These items are consumed and the axe item is given to player in inventory.
 
 Task-3:Add a time system to the game. The enviroment changes based on time of day (day/night cycle).
-
+night time is going to be darker all the images , kind of filter
 Add tinderbox item to each character's inventory when starting the game. The tinderbox can be used to start a camp. The player recovers health while camping, but needs food (5 food units to be able to camp).
 
 Task-2 Make sure that damage dealt to monster is equal to player strength
