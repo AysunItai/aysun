@@ -5,11 +5,11 @@ Task-3:Add a time system to the game. The enviroment changes based on time of da
 
 Add tinderbox item to each character's inventory when starting the game. The tinderbox can be used to start a camp. The player recovers health while camping, but needs food (5 food units to be able to camp).
 
-Make sure that damage dealt to monster is equal to player strength
+Task-2 Make sure that damage dealt to monster is equal to player strength
 
 Check that health bar displays properly after damage dealt
 
-Create monster behaviour where if the player comes close, the monster will follow
+Task-4 Create monster behaviour where if the player comes close, the monster will follow
 
 give monster ability to damage player. Maybe simply if in close range, the monster attacks every 3 seconds.
 
